@@ -29,4 +29,4 @@ try:
 finally:
 # cleanup the GPIO before finishing :)
     GPIO.cleanup()
-    clear() # clear terminal after ending script
+    clear() # clear terminal after ending scriptt
