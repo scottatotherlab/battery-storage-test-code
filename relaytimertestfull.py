@@ -16,7 +16,7 @@ try:
     while True:
         dt = datetime.datetime.now()
         dtwom = dt.strftime("%Y-%m-%d %H:%M:%S") # datetime "dt" without milliseconds
-        if (dt.hour > 16 & dt.hour < 18):
+        if (dt.hour < 16 & dt.hour > 19):
             print("Time: " + str(dtwom) + "     Wall power / charging battery")
             GPIO.output(ChargerRelay, True)
             GPIO.output(InverterRelay, False)
@@ -29,4 +29,4 @@ try:
 finally:
 # cleanup the GPIO before finishing :)
     GPIO.cleanup()
-   #S clear() # clear terminal after ending script
+    clear() # clear terminal after ending script
