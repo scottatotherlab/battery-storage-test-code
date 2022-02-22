@@ -4,15 +4,15 @@ import datetime
 import time
 import os
 
-InverterRelay = 26 # switch between wall/battery power (wall should be normaly on)
-ChargerRelay = 20 # switch charger on or off (should be normaly off)
+InverterRelay = 26 # switch between wall/battery power - wall should be "NC"
+ChargerRelay = 20 # charger switch - should be "NO"
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(InverterRelay,GPIO.OUT)
 GPIO.setup(ChargerRelay,GPIO.OUT)
 clear = lambda: os.system('clear') # for clearing lines on the terminal
 
-# switch control: True = "NO" terminal closes and "NC" terminal opens
+# switch control: True = "NO"
 try:
     while True:
         dt = datetime.datetime.now()
@@ -31,4 +31,4 @@ try:
 finally:
 # cleanup the GPIO before finishing :)
     GPIO.cleanup()
-    clear() # clear terminal after ending scriptt
+    clear() # clear terminal after ending script
