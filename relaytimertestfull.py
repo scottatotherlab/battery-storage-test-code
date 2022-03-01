@@ -27,8 +27,8 @@ try:
             GPIO.output(ChargerRelay, False)
             GPIO.output(InverterRelay, True)
         time.sleep(1)
-        clear() # so only one line is shown on the console updated per sec
+        # clear() # so only one line is shown on the console updated per sec
 finally:
 # cleanup the GPIO before finishing :)
     GPIO.cleanup()
-    clear() # clear terminal after ending script
+    # clear() # clear terminal after ending script
